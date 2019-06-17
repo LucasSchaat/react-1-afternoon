@@ -31,7 +31,7 @@ export default class FilterObject extends Component {
     }
 
     valueFilter(property) {
-        let ballers = this.state.ballers.split();
+        let ballers = this.state.ballers;
         let filteredArray = []
 
         for(let i=0; i<ballers.length; i++) {
@@ -52,7 +52,7 @@ export default class FilterObject extends Component {
                 <span className='puzzleText'>Original: {JSON.stringify(this.state.ballers, null, 10)}</span>
                 <input className='inputLine' onChange={e => this.handleChange(e.target.value)}/>
                 <button className='confirmationButton' onClick={() => this.valueFilter(this.state.userInput)}>Filter</button>
-                <span className='resultsBox filterObjectPB'>Filtered: {JSON.stringify(this.state.filteredArray, null, 10)}</span>
+                <span className='resultsBox filterObjectRB'>Filtered: {JSON.stringify(this.state.filteredArray, null, 10)}</span>
             </div>
         )
     }
